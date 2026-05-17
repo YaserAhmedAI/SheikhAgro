@@ -545,8 +545,8 @@
   <div class="about-text">
     <div class="section-tag">Who We Are</div>
     <h2 class="section-title">A Nursery Built on Science & Tradition</h2>
-    <p class="section-body">Sheikh Agro is a dedicated high density apple nursery rooted in the fertile valleys of Jammu & Kashmir. We combine traditional farming wisdom with modern orchard science to bring premium planting material to every farmer.</p>
-    <p class="section-body">High Density Planting (HDP) systems allow apple trees to be grown much closer together on dwarfing rootstocks — maximising land use, accelerating early fruiting, and delivering higher yields per hectare than conventional orcharding.</p>
+    <p class="section-body">Sheikh Agro is a dedicated high density apple nursery rooted in the fertile valleys of Jammu & Kashmir. We combine traditional farming wisdom with modern orchard scien[...]
+    <p class="section-body">High Density Planting (HDP) systems allow apple trees to be grown much closer together on dwarfing rootstocks — maximising land use, accelerating early fruiting, and[...]
     <p class="section-body">Our imported nursery stock is raised with precision, ensuring true-to-variety, disease-free plants ready to perform from day one in your orchard.</p>
     <a href="#contact" class="btn-primary">Visit Our Nursery</a>
   </div>
@@ -664,7 +664,7 @@
       <div class="product-icon">🍎</div>
       <div class="product-label">Core Product · Available Now</div>
       <div class="product-name">High Density Apple Plants</div>
-      <div class="product-desc">Certified HD apple plants on M9, M26, and MM111 rootstocks. Ideal for modern trellis systems with early cropping in year 2–3. Multiple premium varieties available.</div>
+      <div class="product-desc">Certified HD apple plants on M9, M26, and MM111 rootstocks. Ideal for modern trellis systems with early cropping in year 2–3. Multiple premium varieties availabl[...]
     </div>
     <div class="product-card">
       <div class="product-icon">🌿</div>
@@ -726,7 +726,7 @@
       <div class="why-num">03</div>
       <div>
         <div class="why-item-title">European Rootstocks, Modern Orchard Science</div>
-        <div class="why-item-desc">We use premium imported rootstocks from Europe to deliver stronger growth, better uniformity, and high-density orchard performance — combining global planting standards with advanced apple cultivation practices.</div>
+        <div class="why-item-desc">We use premium imported rootstocks from Europe to deliver stronger growth, better uniformity, and high-density orchard performance — combining global planting[...]
       </div>
     </div>
     <div class="why-item">
@@ -870,8 +870,19 @@
 </footer>
 
 <script>
+  // ============================================
+  // EMAILJS SETUP - FILL IN YOUR CREDENTIALS
+  // ============================================
+  // 1. Get your credentials from emailjs.com
+  // 2. Replace the placeholder values below
+  
+  const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY_HERE";  // e.g., "zJvXQw0j4NaPWqbWY"
+  const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID_HERE";  // e.g., "service_abc123"
+  const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID_HERE"; // e.g., "template_xyz789"
+  const RECIPIENT_EMAIL = "info@sheikhagro.com";       // Where enquiries should be sent
+  
   // Initialize EmailJS
-  emailjs.init("zJvXQw0j4NaPWqbWY");
+  emailjs.init(EMAILJS_PUBLIC_KEY);
 
   // Form validation
   const form = document.getElementById('contactForm');
@@ -922,6 +933,13 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
+    // Check if credentials are configured
+    if (EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY_HERE") {
+      alert('⚠️ EmailJS is not configured! Please update your credentials in the script (lines 938-941).');
+      console.error('EmailJS credentials not configured');
+      return;
+    }
+    
     // Validate all fields
     let isFormValid = true;
     Object.keys(inputs).forEach(fieldName => {
@@ -938,19 +956,24 @@
 
       try {
         // Send email using EmailJS
-        const response = await emailjs.send('service_sheikhagro', 'template_enquiry', {
-          to_email: 'yasermy@ymail.com',
-          from_name: inputs.name.value,
-          from_email: inputs.email.value,
-          phone: inputs.phone.value,
-          interest: inputs.interest.value,
-          message: inputs.message.value,
-          reply_to: inputs.email.value
-        });
+        const response = await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            to_email: RECIPIENT_EMAIL,
+            from_name: inputs.name.value,
+            from_email: inputs.email.value,
+            phone: inputs.phone.value,
+            interest: inputs.interest.value,
+            message: inputs.message.value,
+            reply_to: inputs.email.value
+          }
+        );
 
         if (response.status === 200) {
-          alert('Thank you! Your enquiry has been sent successfully. We will be in touch shortly.');
-         // form.reset();
+          alert('✅ Thank you! Your enquiry has been sent successfully. We will be in touch shortly.');
+          // Clear form
+          form.reset();
           // Clear error states
           Object.keys(inputs).forEach(fieldName => {
             inputs[fieldName].classList.remove('error');
@@ -958,15 +981,15 @@
           });
         }
       } catch (error) {
-        console.error('Error sending email:', error);
-        alert('There was an error sending your enquiry. Please try again later.');
+        console.error('❌ Error sending email:', error);
+        alert('❌ There was an error sending your enquiry. Please try again later.\n\nError: ' + error.message);
       } finally {
         submitBtn.disabled = false;
         submitBtn.classList.remove('loading');
         submitBtn.textContent = 'Send Enquiry →';
       }
     } else {
-      alert('Please fix the errors in the form before submitting.');
+      alert('❌ Please fix the errors in the form before submitting.');
     }
   });
 </script>
