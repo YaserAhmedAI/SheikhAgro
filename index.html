@@ -184,24 +184,24 @@
 
   /* ── PRODUCTS ── */
   .products {
-    background: var(--bark);
+    background: var(--cream);
     padding: 8rem;
   }
   .products-header { text-align: center; margin-bottom: 4rem; }
-  .products-header .section-tag { color: var(--apple-gold); }
-  .products-header .section-title { color: var(--cream); }
-  .products-header p { color: rgba(245,240,232,0.6); max-width: 540px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
+  .products-header .section-tag { color: var(--leaf); }
+  .products-header .section-title { color: var(--bark); }
+  .products-header p { color: var(--text-soft); max-width: 540px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
 
   .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .product-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(245,240,232,0.08);
+    background: white;
+    border: 1px solid rgba(59,42,26,0.1);
     padding: 2.5rem;
     transition: background 0.3s, transform 0.3s;
     position: relative; overflow: hidden;
   }
   .product-card:hover {
-    background: rgba(255,255,255,0.08); transform: translateY(-4px);
+    background: #fafaf8; transform: translateY(-4px);
   }
   .product-card.featured {
     background: var(--leaf);
@@ -209,29 +209,31 @@
   }
   .product-icon {
     width: 56px; height: 56px; border-radius: 50%;
-    background: rgba(245,240,232,0.1);
+    background: var(--mist);
     display: flex; align-items: center; justify-content: center;
     font-size: 1.8rem; margin-bottom: 1.5rem;
   }
   .featured .product-icon { background: rgba(255,255,255,0.2); }
   .product-label {
     font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--apple-gold); margin-bottom: 0.5rem; font-weight: 500;
+    color: var(--leaf); margin-bottom: 0.5rem; font-weight: 500;
   }
   .featured .product-label { color: rgba(255,255,255,0.7); }
   .product-name {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; font-weight: 700; color: var(--cream);
+    font-size: 1.5rem; font-weight: 700; color: var(--bark);
     margin-bottom: 0.8rem; line-height: 1.2;
   }
-  .product-desc { font-size: 0.9rem; line-height: 1.65; color: rgba(245,240,232,0.55); }
+  .featured .product-name { color: var(--cream); }
+  .product-desc { font-size: 0.9rem; line-height: 1.65; color: var(--text-soft); }
   .featured .product-desc { color: rgba(255,255,255,0.75); }
   .product-coming {
     display: inline-block; margin-top: 1.2rem;
     font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    background: rgba(212,160,23,0.15); color: var(--apple-gold);
+    background: rgba(45,90,39,0.1); color: var(--leaf);
     padding: 0.3rem 0.8rem; border-radius: 2px;
   }
+  .featured .product-coming { background: rgba(255,255,255,0.15); color: white; }
 
   /* ── WHY US ── */
   .why {
@@ -543,8 +545,8 @@
   <div class="about-text">
     <div class="section-tag">Who We Are</div>
     <h2 class="section-title">A Nursery Built on Science & Tradition</h2>
-    <p class="section-body">Sheikh Agro is a dedicated high density apple nursery rooted in the fertile valleys of Jammu & Kashmir. We combine traditional farming wisdom with modern orchard science to deliver premium planting material and expert guidance.</p>
-    <p class="section-body">High Density Planting (HDP) systems allow apple trees to be grown much closer together on dwarfing rootstocks — maximising land use, accelerating early fruiting, and delivering substantially higher yields per hectare than conventional spacing.</p>
+    <p class="section-body">Sheikh Agro is a dedicated high density apple nursery rooted in the fertile valleys of Jammu & Kashmir. We combine traditional farming wisdom with modern orchard science to bring premium planting material to every farmer.</p>
+    <p class="section-body">High Density Planting (HDP) systems allow apple trees to be grown much closer together on dwarfing rootstocks — maximising land use, accelerating early fruiting, and delivering higher yields per hectare than conventional orcharding.</p>
     <p class="section-body">Our nursery stock is raised with precision, ensuring true-to-variety, disease-free plants ready to perform from day one in your orchard.</p>
     <a href="#contact" class="btn-primary">Visit Our Nursery</a>
   </div>
@@ -654,7 +656,7 @@
 <section class="products" id="products">
   <div class="products-header">
     <div class="section-tag">What We Offer</div>
-    <h2 class="section-title" style="color:var(--cream)">Our Products & Services</h2>
+    <h2 class="section-title">Our Products & Services</h2>
     <p>Premium planting material today, with a full agro-input store coming soon — everything a modern apple farmer needs, in one place.</p>
   </div>
   <div class="product-grid">
