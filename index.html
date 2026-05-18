@@ -403,25 +403,75 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 1200px) {
     .product-grid { grid-template-columns: repeat(3, 1fr); }
+    nav { padding: 1rem 2.5rem; }
+    .hero-left { padding: 6rem 3rem 6rem 4rem; }
+    .about, .why, .contact { padding: 6rem 4rem; gap: 4rem; }
+    .products { padding: 6rem 4rem; }
+    .future { padding: 5rem 4rem; }
+    footer { padding: 2.5rem 4rem; }
   }
 
-  @media (max-width: 900px) {
-    nav { padding: 1rem 2rem; }
-    .nav-links { display: none; }
+  @media (max-width: 1024px) {
     .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 70px; }
-    .hero-left { padding: 4rem 2rem 2rem; }
-    .hero-right { padding: 2rem; }
-    .stats-strip { padding: 2.5rem 2rem; flex-wrap: wrap; gap: 1.5rem; }
-    .about, .why, .contact { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
-    .products { padding: 4rem 2rem; }
+    .hero-left { padding: 4rem 3rem 2rem; }
+    .hero-right { padding: 2rem 3rem; }
+    
+    .about { grid-template-columns: 1fr; padding: 5rem 3rem; gap: 3rem; }
+    .about-visual { height: 380px; }
+    
     .product-grid { grid-template-columns: repeat(2, 1fr); }
-    .future { flex-direction: column; padding: 4rem 2rem; }
-    footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 2rem; }
+    .products { padding: 5rem 3rem; }
+    
+    .why { grid-template-columns: 1fr; padding: 5rem 3rem; gap: 3rem; }
+    .why-right { top: 0; }
+    
+    .contact { grid-template-columns: 1fr; padding: 5rem 3rem; gap: 3rem; }
+    
+    .future { flex-direction: column; padding: 4rem 3rem; align-items: flex-start; }
+    .future-cta { align-self: flex-start; }
+    
+    .stats-strip { padding: 2.5rem 3rem; flex-wrap: wrap; gap: 1.5rem; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 3rem; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    
+    .hero-left { padding: 3rem 1.5rem 1.5rem; }
+    .hero-right { padding: 1.5rem; }
+    
+    .about { padding: 4rem 1.5rem; gap: 2rem; }
+    .about-visual { height: 320px; }
+    
+    .products { padding: 4rem 1.5rem; }
     .product-grid { grid-template-columns: 1fr; }
+    
+    .why { padding: 4rem 1.5rem; }
+    
+    .contact { padding: 4rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    
+    .future { padding: 3rem 1.5rem; }
+    
+    .stats-strip { padding: 2rem 1.5rem; }
+    footer { padding: 2rem 1.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 1.2rem; }
+    
+    .hero { padding-top: 60px; }
+    .hero-left { padding: 2rem 1rem 1rem; }
+    .hero-headline { font-size: clamp(2rem, 4vw, 3rem); }
+    
+    .products-header p { font-size: 0.9rem; }
+    
+    .section-title { font-size: clamp(1.5rem, 3vw, 2rem); }
+    
+    footer { padding: 1.5rem 1rem; font-size: 0.8rem; }
   }
 </style>
 </head>
@@ -558,8 +608,8 @@
   <div class="about-text">
     <div class="section-tag">Who We Are</div>
     <h2 class="section-title">A Nursery Built on Science & Tradition</h2>
-    <p class="section-body">Sheikh Agro is a dedicated high density apple nursery rooted in the fertile valleys of Jammu & Kashmir. We combine traditional farming wisdom with modern orchard scien[...]
-    <p class="section-body">High Density Planting (HDP) systems allow apple trees to be grown much closer together on dwarfing rootstocks — maximising land use, accelerating early fruiting, and[...]
+    <p class="section-body">Sheikh Agro is a dedicated high density apple nursery rooted in the fertile valleys of Jammu & Kashmir. We combine traditional farming wisdom with modern orchard science to deliver certified HD apple plants suited to every climate in India.</p>
+    <p class="section-body">High Density Planting (HDP) systems allow apple trees to be grown much closer together on dwarfing rootstocks — maximising land use, accelerating early fruiting, and reducing input costs per unit of land.</p>
     <p class="section-body">Our imported nursery stock is raised with precision, ensuring true-to-variety, disease-free plants ready to perform from day one in your orchard.</p>
     <a href="#contact" class="btn-primary">Visit Our Nursery</a>
   </div>
@@ -677,7 +727,7 @@
       <div class="product-icon">🍎</div>
       <div class="product-label">Core Product · Available Now</div>
       <div class="product-name">High Density Apple Plants</div>
-      <div class="product-desc">Certified HD apple plants on M9, M26, and MM111 rootstocks. Ideal for modern trellis systems with early cropping in year 2–3. Multiple premium varieties availabl[...]
+      <div class="product-desc">Certified HD apple plants on M9, M26, and MM111 rootstocks. Ideal for modern trellis systems with early cropping in year 2–3. Multiple premium varieties available.</div>
     </div>
     <div class="product-card">
       <div class="product-icon">🌿</div>
@@ -739,7 +789,7 @@
       <div class="why-num">03</div>
       <div>
         <div class="why-item-title">European Rootstocks, Modern Orchard Science</div>
-        <div class="why-item-desc">We use premium imported rootstocks from Europe to deliver stronger growth, better uniformity, and high-density orchard performance — combining global planting[...]
+        <div class="why-item-desc">We use premium imported rootstocks from Europe to deliver stronger growth, better uniformity, and high-density orchard performance — combining global planting science with local wisdom.</div>
       </div>
     </div>
     <div class="why-item">
@@ -998,18 +1048,15 @@ const RECIPIENT_EMAIL = "yaser@sheikhagro.com";
           });
         }
       } catch (error) {
-        console.error('❌ Error sending email:', error);
-        alert('❌ There was an error sending your enquiry. Please try again later.\n\nError: ' + error.message);
+        console.error('EmailJS Error:', error);
+        alert('❌ There was an error sending your message. Please try again.');
       } finally {
         submitBtn.disabled = false;
         submitBtn.classList.remove('loading');
         submitBtn.textContent = 'Send Enquiry →';
       }
-    } else {
-      alert('❌ Please fix the errors in the form before submitting.');
     }
   });
 </script>
-
 </body>
 </html>
